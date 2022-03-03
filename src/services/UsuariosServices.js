@@ -16,6 +16,7 @@ class UsuariosServices{
             });
             const {senha:senhaUsuariosCriado, ...resto}= usuarios._doc;
             return res.status(201).json({usuarios: resto}) 
+
         } catch (error) {
             console.log(error);
             return res.status(400).json(error)
