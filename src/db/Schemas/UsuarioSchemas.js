@@ -3,7 +3,7 @@ const {Schema, model, models } = require('mongoose');
 const UsuarioSchemas = new Schema({
     nome:{
         type: String,
-        require: true,
+        require: true
     },
     email:{
         type: String,
