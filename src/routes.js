@@ -17,4 +17,5 @@ routes.route('/usuarioslista')
 .get((req,res)=>{
   return UsuarioController.getOneController(req, res)
 })
+routes.route('/usuariodelet')
 module.exports = routes;
