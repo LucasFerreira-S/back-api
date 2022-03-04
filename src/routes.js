@@ -1,6 +1,8 @@
 const express = require('express');
 const UsuariosControllers = require('./controllers/UsuarioControllers');
-const UsuarioController = new UsuariosControllers()
+const AuthControllers = require('./controllers/auth.controller');
+const AuthController = new AuthControllers();
+const UsuarioController = new UsuariosControllers();
 
 const routes = express.Router();
 routes.get('/',(req, res)=>{
@@ -17,5 +19,6 @@ routes.route('/usuarioslista')
 .get((req,res)=>{
   return UsuarioController.getOneController(req, res)
 })
-routes.route('/usuariodelet')
+routes.route('/login')
+.post(async(req,res)=>await AuthController.loginController(req,res))
 module.exports = routes;
