@@ -13,5 +13,8 @@ routes.route('/usuarios')
   .get((req,res)=>{
     return UsuarioController.getAllController(req, res)
   })
-
+routes.route('/usuarioslista')
+.get((req,res)=>{
+  return UsuarioController.getOneController(req, res)
+})
 module.exports = routes;
