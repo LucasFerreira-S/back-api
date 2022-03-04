@@ -10,5 +10,8 @@ routes.route('/usuarios')
   .post((req, res) => {
     return UsuarioController.createController(req, res)
   })
-  
+  .get((req,res)=>{
+    return UsuarioController.getAllController(req, res)
+  })
+
 module.exports = routes;

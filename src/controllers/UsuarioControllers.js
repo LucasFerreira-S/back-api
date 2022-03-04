@@ -11,5 +11,8 @@ class UsuariosControllers{
         }
         return this.services.createService(req,res)
     }
+    async getAllController(req,res){
+        return this.services.getUsuarioServices(req,res)
+    }
 }
 module.exports = UsuariosControllers
