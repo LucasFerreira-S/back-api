@@ -21,5 +21,12 @@ class UsuariosControllers{
         }
         return this.services.getOneUsuarioServices(req,res)
     }
+    async deleteController(req,res){
+        const {email} = req.body;
+        if(!email){
+            return res.status(400).json({error:"Informe um email válido"})
+        }
+        return this.services.deleteUsuarioServices(req,res)
+    }
 }
 module.exports = UsuariosControllers

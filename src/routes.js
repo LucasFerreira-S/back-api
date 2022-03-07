@@ -22,4 +22,6 @@ routes.route('/usuarioslista')
 })
 routes.route('/login')
 .post(async(req,res)=> AuthControllers.loginController(req,res))
+routes.route('/delete')
+.delete(async(req,res)=> UsuarioController.deleteController(req,res))
 module.exports = routes;
