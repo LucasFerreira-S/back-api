@@ -14,11 +14,10 @@ routes.route('/usuarios')
   .post((req, res) => {
     return UsuarioController.createController(req, res)
   })
-  
-routes.use(new Middlewares().validateToken);
-
 routes.route('/login')
 .post(async(req,res)=> AuthControllers.loginController(req,res))
+routes.use(new Middlewares().validateToken);
+
 routes.route('/usuarios/listageral')
   .get((req,res)=>{
     return UsuarioController.getAllController(req, res)
