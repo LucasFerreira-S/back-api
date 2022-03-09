@@ -15,7 +15,7 @@ class UsuariosControllers{
         return this.services.getUsuarioServices(req,res)
     }
     async getOneController(req,res){
-        const {email} = req.query;
+        const {email} = req.body;
         if(!email){
             return res.status(400).json({error:"Informe um email válido"})
         }
