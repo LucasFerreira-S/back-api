@@ -27,7 +27,7 @@ class AuthService{
             await this.#_conexao();
             const usuario = await this.#_usuarios.findOne({email});
             if(!usuario){
-                return res.status(404).json({error:'deu erro ai man'})
+                return res.status(404).json({error:'usuario não encontrado'})
             }
             const  validatePass = await this.#_validatePassword(senha, usuario.senha)
             if(!validatePass){
